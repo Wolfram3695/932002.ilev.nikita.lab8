@@ -5,3 +5,7 @@
 .buttons{
     display: flex;
 }
+
+.save{
+    margin-top: 20px;
+}

@@ -24,3 +24,24 @@ function deleter(i){
     const del = i.parentElement;
     del.remove();
 }
+
+function saver(){
+    var info = document.createElement('div');
+    info.className = 'save';
+    info.innerHTML = '{';
+    document.body.append(info);
+    var object = document.getElementsByClassName('count');
+    for (const k in object){
+        if (object.hasOwnProperty(k)){
+            const element = object[k];
+            if(element != document.getElementsByClassName('.count')[0]){
+                var text = '"' + element.children[0].value + '":"' + element.children[1].value + '"';
+                info.innerHTML += text;
+                if(element.nextSibling != undefined){
+                    info.innerHTML += ',';
+                }
+            }
+        }
+    }
+    info.innerHTML += '}';
+}
